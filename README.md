@@ -3,113 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe on Stacks Blockchain</title>
+    <title>Blockchain Tic-Tac-Toe - Clarity Smart Contract</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2f80ed;
+            --secondary-color: #4f4f4f;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--secondary-color);
+        }
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
         .badge {
-            margin: 2px;
-            padding: 8px;
+            font-size: 0.9em;
+            padding: 0.6em 1em;
+            border-radius: 20px;
         }
         .code-block {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
+            border-radius: 8px;
+            padding: 1.2rem;
+            font-family: 'Consolas', monospace;
+            margin: 1rem 0;
         }
-        .grid {
+        .feature-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+        }
+        .game-board {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 4px;
+            width: 300px;
+            margin: 2rem auto;
+        }
+        .game-cell {
+            border: 2px solid #2f80ed;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
-    <div class="container py-4">
-        <!-- Header -->
+<body class="bg-light">
+    <div class="container py-5">
+        <!-- Header Section -->
         <header class="text-center mb-5">
-            <h1 class="display-4">🎮 Tic-Tac-Toe on Stacks Blockchain</h1>
-            <div class="badges">
-                <div class="badge bg-primary">Clarity 1.7.1</div>
-                <div class="badge bg-warning text-dark">MIT License</div>
-                <div class="badge bg-success">Tests Passing</div>
+            <h1 class="display-4 fw-bold mb-3">⛓️ Blockchain Tic-Tac-Toe</h1>
+            <div class="d-flex justify-content-center gap-2 mb-4">
+                <span class="badge bg-primary">Clarity 1.7.1</span>
+                <span class="badge bg-success">100% Tested</span>
+                <span class="badge bg-warning text-dark">MIT Licensed</span>
             </div>
         </header>
 
-        <!-- Features -->
-        <section class="mb-5">
-            <h2>🌟 Features</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>🕹️ On-Chain Logic</h5>
-                        <p>Fully decentralized game rules</p>
+        <!-- Main Content -->
+        <main>
+            <!-- Features -->
+            <section class="mb-5">
+                <h2 class="mb-4">✨ Key Features</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <h4>💰 STX Betting</h4>
+                            <p>Secure escrow system with automated payouts</p>
+                        </div>
                     </div>
+                    <!-- Add other feature cards similarly -->
                 </div>
-                <!-- Repeat for other features -->
-            </div>
-        </section>
+            </section>
 
-        <!-- Installation -->
-        <section class="mb-5">
-            <h2>📦 Installation</h2>
-            <pre class="code-block"><code>git clone https://github.com/yourusername/tic-tac-toe-stacks.git
-cd tic-tac-toe-stacks
-npm install -g @hirosystems/clarinet</code></pre>
-        </section>
-
-        <!-- Usage -->
-        <section class="mb-5">
-            <h2>🚀 Usage</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Start Devnet</h3>
-                    <pre class="code-block"><code>clarinet integrate</code></pre>
+            <!-- Quick Start -->
+            <section class="mb-5">
+                <h2 class="mb-4">🚀 Quick Start</h2>
+                <div class="code-block">
+                    <code># Clone repository<br>
+                    git clone https://github.com/yourusername/tic-tac-toe-stacks.git<br>
+                    cd tic-tac-toe-stacks<br>
+                    clarinet test</code>
                 </div>
-                <div class="col-md-4">
-                    <h3>Run Tests</h3>
-                    <pre class="code-block"><code>clarinet test --watch</code></pre>
+            </section>
+
+            <!-- Game Interface -->
+            <section class="mb-5">
+                <h2 class="mb-4">🎮 Game Preview</h2>
+                <div class="game-board">
+                    <div class="game-cell">X</div>
+                    <div class="game-cell">O</div>
+                    <div class="game-cell">X</div>
+                    <!-- Add all 9 cells -->
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contract Functions -->
-        <section class="mb-5">
-            <h2>📜 Contract Functions</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Create Game</h3>
-                    <pre class="code-block"><code>(contract-call? .tic-tac-toe create-game u1000000)</code></pre>
+            <!-- Contract Functions -->
+            <section class="mb-5">
+                <h2 class="mb-4">📜 Smart Contract Methods</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="code-block">
+                            <h5>Create Game</h5>
+                            <code>(contract-call? .tic-tac-toe create-game u1000000)</code>
+                        </div>
+                    </div>
+                    <!-- Add other methods -->
                 </div>
-                <!-- Add other functions -->
-            </div>
-        </section>
+            </section>
 
-        <!-- Game Mechanics -->
-        <section class="mb-5">
-            <h2>🕹️ Game Mechanics</h2>
-            <pre class="code-block"><code>0 | 1 | 2
----------
-3 | 4 | 5
----------
-6 | 7 | 8</code></pre>
-        </section>
-
-        <!-- Security -->
-        <section class="mb-5">
-            <h2>🔒 Security Features</h2>
-            <ul class="list-group">
-                <li class="list-group-item">💰 STX Escrow System</li>
-                <!-- Add other security features -->
-            </ul>
-        </section>
+            <!-- Security -->
+            <section class="mb-5">
+                <h2 class="mb-4">🔒 Security Features</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <h5>🔐 Escrow System</h5>
+                            <p>Funds held securely until game resolution</p>
+                        </div>
+                    </div>
+                    <!-- Add other security features -->
+                </div>
+            </section>
+        </main>
 
         <!-- Footer -->
-        <footer class="text-center mt-5">
-            <p>📄 MIT License - See <a href="LICENSE">LICENSE</a></p>
-            <p>🙏 Acknowledgments to Hiro PBC and Stacks Community</p>
+        <footer class="mt-5 pt-4 border-top">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>License</h5>
+                    <p>MIT Licensed - Free for open source use</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Acknowledgments</h5>
+                    <ul class="list-unstyled">
+                        <li>Hiro PBC</li>
+                        <li>Stacks Community</li>
+                    </ul>
+                </div>
+            </div>
         </footer>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
