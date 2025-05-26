@@ -30,6 +30,7 @@
             padding: 1.2rem;
             font-family: 'Consolas', monospace;
             margin: 1rem 0;
+            overflow-x: auto;
         }
         .feature-card {
             border: 1px solid #e0e0e0;
@@ -56,6 +57,7 @@
             justify-content: center;
             font-size: 2em;
             cursor: pointer;
+            background-color: white;
         }
     </style>
 </head>
@@ -80,10 +82,21 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="feature-card">
                             <h4>💰 STX Betting</h4>
-                            <p>Secure escrow system with automated payouts</p>
+                            <p>Secure escrow system with automated payouts.</p>
                         </div>
                     </div>
-                    <!-- Add other feature cards similarly -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <h4>🧠 On-chain Logic</h4>
+                            <p>All game rules and state stored on the blockchain.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <h4>📈 Auditable State</h4>
+                            <p>Viewable and verifiable game history for transparency.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -91,10 +104,12 @@
             <section class="mb-5">
                 <h2 class="mb-4">🚀 Quick Start</h2>
                 <div class="code-block">
-                    <code># Clone repository<br>
-                    git clone https://github.com/yourusername/tic-tac-toe-stacks.git<br>
-                    cd tic-tac-toe-stacks<br>
-                    clarinet test</code>
+                    <code>
+# Clone repository<br>
+git clone https://github.com/yourusername/tic-tac-toe-stacks.git<br>
+cd tic-tac-toe-stacks<br>
+clarinet test
+                    </code>
                 </div>
             </section>
 
@@ -105,7 +120,12 @@
                     <div class="game-cell">X</div>
                     <div class="game-cell">O</div>
                     <div class="game-cell">X</div>
-                    <!-- Add all 9 cells -->
+                    <div class="game-cell">O</div>
+                    <div class="game-cell">X</div>
+                    <div class="game-cell">O</div>
+                    <div class="game-cell">X</div>
+                    <div class="game-cell">O</div>
+                    <div class="game-cell">X</div>
                 </div>
             </section>
 
@@ -119,7 +139,18 @@
                             <code>(contract-call? .tic-tac-toe create-game u1000000)</code>
                         </div>
                     </div>
-                    <!-- Add other methods -->
+                    <div class="col-md-6">
+                        <div class="code-block">
+                            <h5>Join Game</h5>
+                            <code>(contract-call? .tic-tac-toe join-game u0)</code>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="code-block">
+                            <h5>Make Move</h5>
+                            <code>(contract-call? .tic-tac-toe play u0 u4)</code>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -130,10 +161,21 @@
                     <div class="col-md-4">
                         <div class="feature-card">
                             <h5>🔐 Escrow System</h5>
-                            <p>Funds held securely until game resolution</p>
+                            <p>Funds held securely until game resolution.</p>
                         </div>
                     </div>
-                    <!-- Add other security features -->
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <h5>🛡️ Immutable Logic</h5>
+                            <p>Smart contract logic can't be tampered once deployed.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <h5>📊 Audits</h5>
+                            <p>Code fully tested and reviewed for exploits.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
