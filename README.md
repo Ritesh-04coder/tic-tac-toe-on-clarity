@@ -1,147 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blockchain Tic-Tac-Toe - Clarity Smart Contract</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body class="bg-light">
-  <div class="container py-5">
-    <!-- Header Section -->
-    <header class="text-center mb-5">
-      <h1 class="display-4 fw-bold mb-3">⛓️ Blockchain Tic-Tac-Toe</h1>
-      <div class="d-flex justify-content-center gap-2 mb-4">
-        <span class="badge bg-primary">Clarity 1.7.1</span>
-        <span class="badge bg-success">100% Tested</span>
-        <span class="badge bg-warning text-dark">MIT Licensed</span>
-      </div>
-    </header>
+# ⛓️ Blockchain Tic-Tac-Toe
 
-    <!-- Main Content -->
-    <main>
-      <!-- Features -->
-      <section class="mb-5">
-        <h2 class="mb-4">✨ Key Features</h2>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="border rounded p-3">
-              <h4>💰 STX Betting</h4>
-              <p>Secure escrow system with automated payouts.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="border rounded p-3">
-              <h4>🧠 On-chain Logic</h4>
-              <p>All game rules and state stored on the blockchain.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="border rounded p-3">
-              <h4>📈 Auditable State</h4>
-              <p>Viewable and verifiable game history for transparency.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+A decentralized Tic-Tac-Toe game built on the Stacks blockchain using Clarity smart contracts. Players can bet STX tokens and play against each other with full transparency and automated payouts.
 
-      <!-- Quick Start -->
-      <section class="mb-5">
-        <h2 class="mb-4">🚀 Quick Start</h2>
-        <pre class="bg-light p-3 border rounded">
-<code># Clone repository
+## ✨ Key Features
+
+- **💰 STX Betting**: Secure escrow system with automated payouts
+- **🧠 On-chain Logic**: All game rules and state stored on the blockchain
+- **📈 Auditable State**: Viewable and verifiable game history for transparency
+- **🔐 Secure Escrow**: Funds held securely until game resolution
+- **🛡️ Immutable Logic**: Smart contract logic can't be tampered once deployed
+- **📊 Fully Audited**: Code fully tested and reviewed for exploits
+
+## 🚀 Quick Start
+
+```bash
+# Clone repository
 git clone https://github.com/yourusername/tic-tac-toe-stacks.git
 cd tic-tac-toe-stacks
-clarinet test</code>
-        </pre>
-      </section>
 
-      <!-- Game Interface -->
-      <section class="mb-5 text-center">
-        <h2 class="mb-4">🎮 Game Preview</h2>
-        <div class="d-grid mx-auto" style="grid-template-columns: repeat(3, 100px); gap: 4px; width: max-content;">
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">X</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">O</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">X</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">O</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">X</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">O</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">X</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">O</div>
-          <div class="border d-flex align-items-center justify-content-center" style="height: 100px;">X</div>
-        </div>
-      </section>
+# Install Clarinet (if not already installed)
+# Follow instructions at: https://docs.hiro.so/clarinet/getting-started
 
-      <!-- Contract Functions -->
-      <section class="mb-5">
-        <h2 class="mb-4">📜 Smart Contract Methods</h2>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="bg-light p-3 border rounded">
-              <h5>Create Game</h5>
-              <code>(contract-call? .tic-tac-toe create-game u1000000)</code>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-light p-3 border rounded">
-              <h5>Join Game</h5>
-              <code>(contract-call? .tic-tac-toe join-game u0)</code>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-light p-3 border rounded">
-              <h5>Make Move</h5>
-              <code>(contract-call? .tic-tac-toe play u0 u4)</code>
-            </div>
-          </div>
-        </div>
-      </section>
+# Run tests
+clarinet test
 
-      <!-- Security -->
-      <section class="mb-5">
-        <h2 class="mb-4">🔒 Security Features</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="border rounded p-3">
-              <h5>🔐 Escrow System</h5>
-              <p>Funds held securely until game resolution.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="border rounded p-3">
-              <h5>🛡️ Immutable Logic</h5>
-              <p>Smart contract logic can't be tampered once deployed.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="border rounded p-3">
-              <h5>📊 Audits</h5>
-              <p>Code fully tested and reviewed for exploits.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+# Deploy to local testnet
+clarinet integrate
+```
 
-    <!-- Footer -->
-    <footer class="mt-5 pt-4 border-top">
-      <div class="row">
-        <div class="col-md-6">
-          <h5>License</h5>
-          <p>MIT Licensed - Free for open source use</p>
-        </div>
-        <div class="col-md-6">
-          <h5>Acknowledgments</h5>
-          <ul class="list-unstyled">
-            <li>Hiro PBC</li>
-            <li>Stacks Community</li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
+## 🎮 How to Play
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+1. **Create a Game**: Player 1 creates a new game with a bet amount
+2. **Join Game**: Player 2 joins the game with the same bet amount
+3. **Make Moves**: Players alternate making moves on the 3x3 grid
+4. **Win or Draw**: Game automatically determines winner and distributes funds
+
+### Game Board Layout
+```
+ 0 | 1 | 2 
+-----------
+ 3 | 4 | 5 
+-----------
+ 6 | 7 | 8 
+```
+
+## 📜 Smart Contract Methods
+
+### Public Functions
+
+#### Create Game
+```clarity
+(contract-call? .tic-tac-toe create-game u1000000)
+```
+Creates a new game with specified bet amount (in microSTX).
+
+#### Join Game
+```clarity
+(contract-call? .tic-tac-toe join-game u0)
+```
+Join an existing game by game ID.
+
+#### Make Move
+```clarity
+(contract-call? .tic-tac-toe play u0 u4)
+```
+Make a move in game ID 0, position 4 (center).
+
+### Read-Only Functions
+
+#### Get Game State
+```clarity
+(contract-call? .tic-tac-toe get-game u0)
+```
+
+#### Get Game Board
+```clarity
+(contract-call? .tic-tac-toe get-board u0)
+```
+
+#### Check Winner
+```clarity
+(contract-call? .tic-tac-toe get-winner u0)
+```
+
+## 🏗️ Contract Architecture
+
+The smart contract manages:
+- **Game State**: Active games, player turns, board positions
+- **Escrow System**: Secure holding of bet amounts
+- **Win Detection**: Automatic detection of winning combinations
+- **Payout Logic**: Automated distribution of winnings
+
+### Game States
+- `waiting-for-player`: Game created, waiting for second player
+- `in-progress`: Game active, players taking turns
+- `finished`: Game completed with winner or draw
+
+## 🔒 Security Features
+
+- **Escrow Protection**: Funds are locked in contract until game completion
+- **Turn Validation**: Only current player can make moves
+- **Position Validation**: Prevents overwriting occupied positions
+- **Immutable Rules**: Game logic cannot be changed after deployment
+- **Comprehensive Testing**: 100% test coverage for all game scenarios
+
+## 🧪 Testing
+
+Run the complete test suite:
+
+```bash
+clarinet test
+```
+
+Tests cover:
+- Game creation and joining
+- Move validation
+- Win condition detection
+- Escrow and payout functionality
+- Edge cases and error conditions
+
+## 📁 Project Structure
+
+```
+├── contracts/
+│   └── tic-tac-toe.clar     # Main smart contract
+├── tests/
+│   └── tic-tac-toe_test.ts  # Test suite
+├── Clarinet.toml            # Clarinet configuration
+└── README.md                # This file
+```
+
+## 🚀 Deployment
+
+### Local Testnet
+```bash
+clarinet integrate
+clarinet console
+```
+
+### Stacks Testnet
+```bash
+clarinet deploy --testnet
+```
+
+### Stacks Mainnet
+```bash
+clarinet deploy --mainnet
+```
+
+## 💡 Usage Examples
+
+### Creating and Playing a Game
+
+```javascript
+// Create a new game with 1 STX bet
+await contractCall({
+  contractAddress: 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9',
+  contractName: 'tic-tac-toe',
+  functionName: 'create-game',
+  functionArgs: [uintCV(1000000)], // 1 STX in microSTX
+});
+
+// Join the game
+await contractCall({
+  contractAddress: 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9',
+  contractName: 'tic-tac-toe',
+  functionName: 'join-game',
+  functionArgs: [uintCV(0)], // Game ID
+});
+
+// Make a move
+await contractCall({
+  contractAddress: 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9',
+  contractName: 'tic-tac-toe',
+  functionName: 'play',
+  functionArgs: [uintCV(0), uintCV(4)], // Game ID, Position
+});
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📋 Requirements
+
+- [Clarinet](https://docs.hiro.so/clarinet/getting-started) v1.7.1+
+- Node.js 16+ (for testing)
+- Stacks Wallet (for mainnet deployment)
+
+## 🐛 Known Issues
+
+- None currently reported
+
+## 📚 Resources
+
+- [Clarity Documentation](https://docs.stacks.co/clarity/)
+- [Stacks Blockchain](https://stacks.co/)
+- [Hiro Developer Tools](https://docs.hiro.so/)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Hiro PBC](https://hiro.so/) for Clarity and development tools
+- Stacks Community for support and feedback
+- All contributors and testers
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/tic-tac-toe-stacks/issues) page
+2. Create a new issue if your problem isn't already reported
+3. Join the [Stacks Discord](https://discord.gg/stacks) for community support
+
+---
+
+**Built with ❤️ on Stacks**
