@@ -6,7 +6,7 @@ telemetry = true
 cache_dir = "./.cache"
 
 # [contracts.counter]
-# path = "contracts/counter.clar"
+# path = "contracts/tic-tac-toe.clar"
 
 [repl.analysis]
 passes = ["check_checker"]
